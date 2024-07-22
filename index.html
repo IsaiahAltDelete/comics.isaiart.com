@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comic Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Comic Page</h1>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for comics...">
+            <button id="search-button">Search</button>
+        </div>
+        <div class="filter-container">
+            <select id="publisher-filter">
+                <option value="">All Publishers</option>
+            </select>
+        </div>
+    </header>
+    <main>
+        <section id="comics-list">
+            <!-- Comics will be displayed here -->
+        </section>
+        <div id="pagination">
+            <button id="prev-page">Previous</button>
+            <button id="next-page">Next</button>
+        </div>
+    </main>
+    <div id="comic-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="comic-details">
+                <!-- Comic details will be displayed here -->
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
