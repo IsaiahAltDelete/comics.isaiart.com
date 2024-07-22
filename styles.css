@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.search-container {
+    margin-top: 1rem;
+}
+
+#search-input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 200px;
+}
+
+#search-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background-color: #ff7e5f;
+    color: white;
+    cursor: pointer;
+}
+
+.filter-container {
+    margin-top: 1rem;
+}
+
+#publisher-filter {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+main {
+    padding: 1rem;
+}
+
+#comics-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.comic-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 200px;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.comic-item:hover {
+    transform: scale(1.05);
+}
+
+.comic-item img {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+.comic-item h3 {
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    text-align: center;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+}
+
+#pagination {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#pagination button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background-color: #ff7e5f;
+    color: white;
+    cursor: pointer;
+    margin: 0 0.5rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
