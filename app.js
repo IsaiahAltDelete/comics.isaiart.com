@@ -14,31 +14,37 @@ document.addEventListener('DOMContentLoaded', () => {
     let offset = 0;
 
     const fetchComics = (url) => {
+        console.log('Fetching comics from:', url);
         fetch(url)
             .then(response => response.json())
             .then(data => {
+                console.log('Data fetched:', data);
                 comicsList.innerHTML = '';
-                const comics = data.results;
-                comics.forEach(comic => {
-                    const comicItem = document.createElement('div');
-                    comicItem.className = 'comic-item';
-                    comicItem.dataset.id = comic.id;
+                if (data.results) {
+                    const comics = data.results;
+                    comics.forEach(comic => {
+                        const comicItem = document.createElement('div');
+                        comicItem.className = 'comic-item';
+                        comicItem.dataset.id = comic.id;
 
-                    const comicImage = document.createElement('img');
-                    comicImage.src = comic.image.original_url;
-                    comicImage.alt = comic.name;
+                        const comicImage = document.createElement('img');
+                        comicImage.src = comic.image.original_url;
+                        comicImage.alt = comic.name;
 
-                    const comicTitle = document.createElement('h3');
-                    comicTitle.textContent = comic.name;
+                        const comicTitle = document.createElement('h3');
+                        comicTitle.textContent = comic.name;
 
-                    comicItem.appendChild(comicImage);
-                    comicItem.appendChild(comicTitle);
-                    comicsList.appendChild(comicItem);
+                        comicItem.appendChild(comicImage);
+                        comicItem.appendChild(comicTitle);
+                        comicsList.appendChild(comicItem);
 
-                    comicItem.addEventListener('click', () => {
-                        showComicDetails(comic);
+                        comicItem.addEventListener('click', () => {
+                            showComicDetails(comic);
+                        });
                     });
-                });
+                } else {
+                    comicsList.innerHTML = '<p>No comics found.</p>';
+                }
             })
             .catch(error => console.error('Error fetching comics:', error));
     };
